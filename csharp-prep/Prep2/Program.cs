@@ -62,5 +62,14 @@ class Program
         string n = (letter == "A" || letter == "F") ? "n" : "";
 
             Console.Write($"Your grade is a{n} {letter}{sign}. ");
+
+        if (grade >= 70)
+        {
+            Console.WriteLine("You passed!");
+        }
+        else
+        {
+            Console.WriteLine("Good luck retaking the course!");
+        }
     }
 }
