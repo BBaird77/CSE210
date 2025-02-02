@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-class JournalEntry
+class _journalEntry
 {
     public string Prompt { get; set; }
     public string Response { get; set; }
@@ -14,16 +14,18 @@ class JournalEntry
     }
 }
 
-class Journal
+class _journal
 {
-    private List<JournalEntry> entries = new List<JournalEntry>();
+    private List<_journalEntry> entries = new List<_journalEntry>();
     private List<string> prompts = new List<string>
     {
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
         "How did I see the hand of the Lord in my life today?",
         "What was the strongest emotion I felt today?",
-        "If I had one thing I could do over today, what would it be?"
+        "If I had one thing I could do over today, what would it be?",
+        "What are your goals for the next five years?",
+        
     };
 
     public void WriteNewEntry()
@@ -33,7 +35,7 @@ class Journal
 
         Console.WriteLine(prompt);
         string response = Console.ReadLine();
-        entries.Add(new JournalEntry { Prompt = prompt, Response = response, Date = DateTime.Now });
+        entries.Add(new _journalEntry { Prompt = prompt, Response = response, Date = DateTime.Now });
     }
 
     public void DisplayJournal()
@@ -82,7 +84,7 @@ class Journal
         string[] lines = File.ReadAllLines(filename);
         for (int i = 0; i < lines.Length; i += 4)
         {
-            JournalEntry entry = new JournalEntry
+            _journalEntry entry = new _journalEntry
             {
                 Date = DateTime.Parse(lines[i]),
                 Prompt = lines[i + 1],
@@ -94,11 +96,11 @@ class Journal
     }
 }
 
-class Program
+class _program
 {
     static void Main()
     {
-        Journal journal = new Journal();
+        _journal journal = new _journal();
         while (true)
         {
             Console.WriteLine("\nJournal Menu:");
