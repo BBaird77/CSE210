@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-class _journalEntry
+class JournalEntry
 {
     public string Prompt { get; set; }
     public string Response { get; set; }
@@ -14,9 +14,9 @@ class _journalEntry
     }
 }
 
-class _journal
+class Journal
 {
-    private List<_journalEntry> entries = new List<_journalEntry>();
+    private List<JournalEntry> entries = new List<JournalEntry>();
     private List<string> prompts = new List<string>
     {
         "Who was the most interesting person I interacted with today?",
@@ -26,7 +26,6 @@ class _journal
         "If I had one thing I could do over today, what would it be?",
         "What are your goals for the next five years?",
         "What is your fondest memory of family?"
-        
     };
 
     public void WriteNewEntry()
@@ -36,7 +35,7 @@ class _journal
 
         Console.WriteLine(prompt);
         string response = Console.ReadLine();
-        entries.Add(new _journalEntry { Prompt = prompt, Response = response, Date = DateTime.Now });
+        entries.Add(new JournalEntry { Prompt = prompt, Response = response, Date = DateTime.Now });
     }
 
     public void DisplayJournal()
@@ -85,7 +84,7 @@ class _journal
         string[] lines = File.ReadAllLines(filename);
         for (int i = 0; i < lines.Length; i += 4)
         {
-            _journalEntry entry = new _journalEntry
+            JournalEntry entry = new JournalEntry
             {
                 Date = DateTime.Parse(lines[i]),
                 Prompt = lines[i + 1],
@@ -97,11 +96,11 @@ class _journal
     }
 }
 
-class _program
+class Program
 {
     static void Main()
     {
-        _journal journal = new _journal();
+        Journal journal = new Journal();
         while (true)
         {
             Console.WriteLine("\nJournal Menu:");
