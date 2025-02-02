@@ -25,6 +25,7 @@ class _journal
         "What was the strongest emotion I felt today?",
         "If I had one thing I could do over today, what would it be?",
         "What are your goals for the next five years?",
+        "What is your fondest memory of family?"
         
     };
 
