@@ -23,13 +23,13 @@ public class Fraction
         _bottom = bottom;
     }
 
-    public string GetFraction()
+    public string GetFractionString()
     {
         string text = $"{_top}/{_bottom}";
         return text;
     }
 
-    public double GetDecimal()
+    public double GetDecimalValue()
     {
         return (double)_top / (double)_bottom;
     }
