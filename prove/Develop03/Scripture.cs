@@ -16,7 +16,7 @@ class Scripture
 
     public string GetDisplayText()
     {
-        return $"{Reference}\n{string.Join(" ", Words)}";
+        return $"{Reference}{string.Join(" ", Words)}";
     }
 
     public void HideRandomWords(int count)
