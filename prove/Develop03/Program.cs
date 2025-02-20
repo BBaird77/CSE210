@@ -25,7 +25,7 @@ class Program
         {
             Console.Clear();
             Console.WriteLine(scripture.GetDisplayText());
-            Console.WriteLine("\nPress Enter to hide words or type 'quit' to exit.");
+            Console.WriteLine("Press Enter to hide words or type 'quit' to exit.");
             string input = Console.ReadLine();
             
             if (input.ToLower() == "quit")
