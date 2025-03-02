@@ -15,7 +15,7 @@ abstract class Activity
         Console.Write("Enter the chosen duration in seconds: ");
         Duration = int.Parse(Console.ReadLine());
         Console.WriteLine("Get ready to start!");
-        Countdown(3);
+        Countdown(5);
         RunActivity();
         End();
     }
@@ -25,8 +25,8 @@ abstract class Activity
     private void End()
     {
         Console.WriteLine("Great job on completing the activity!");
-        Console.WriteLine($"You completed the {GetType().Name} for a total of {Duration} seconds.");
-        Countdown(3);
+        Console.WriteLine($"You completed the {GetType().Name} activity for a total of {Duration} seconds.");
+        Countdown(5);
     }
     public void Countdown(int seconds)
     {

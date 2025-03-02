@@ -18,12 +18,15 @@ class Program
             Console.Write("Make your selection: ");
             string choice = Console.ReadLine();
 
+            if (choice != "1" && choice != "2" && choice != "3" && choice != "4") break;
+
             Activity activity = choice switch
             {
-                /*"1" => new Breathing(),
-                "2" => new Listing(),*/
+                "1" => new Breathing(),
+                "2" => new Listing(),
                 "3" => new Reflection(),
-                "4" => null
+                "4" => null,
+                "" => null
             };
 
             if (activity == null) break;
