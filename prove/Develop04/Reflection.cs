@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-class Reflection
+class Reflection: Activity
 {
     public static string[] Prompt =
     {
@@ -26,5 +26,18 @@ class Reflection
         "How can you keep this experience in mind in the future?"
     };
 
-    public static string GetDescription() => "This activity helps you reflect on moments of strength and resilience.";
+    public override void RunActivity()
+    {
+        Random rnd = new();
+        Console.WriteLine(Prompt[rnd.Next(Prompt.Length)]);
+        Countdown(3);
+        int elapsed = 0;
+        while (elapsed < Duration)
+        {
+            Console.WriteLine(Question[rnd.Next(Question.Length)]);
+            Countdown(4);
+            elapsed += 4;
+        }
+    }
+    public override string GetDescription() => "This activity helps you reflect on moments of strength and resilience.";
 }

@@ -7,9 +7,16 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine(Breathing.GetDescription());
-        Console.WriteLine(Reflection.GetDescription());
-        Console.WriteLine(Listing.GetDescription());
-        Console.WriteLine(Reflection.GetDescription());
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("Choose an activity:");
+            Console.WriteLine("1. Breathing Activity");
+            Console.WriteLine("2. Listing Activity");
+            Console.WriteLine("3. Reflection Activity");
+            Console.WriteLine("4. Exit Program");
+            Console.Write("Make your selection: ");
+            string choice = Console.ReadLine();
+        }
     }
 }
