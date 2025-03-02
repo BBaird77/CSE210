@@ -30,13 +30,13 @@ class Reflection: Activity
     {
         Random rnd = new();
         Console.WriteLine(Prompt[rnd.Next(Prompt.Length)]);
-        Countdown(3);
+        Countdown(5);
         int elapsed = 0;
         while (elapsed < Duration)
         {
             Console.WriteLine(Question[rnd.Next(Question.Length)]);
-            Countdown(4);
-            elapsed += 4;
+            Countdown(5);
+            elapsed += 5;
         }
     }
     public override string GetDescription() => "This activity helps you reflect on moments of strength and resilience.";

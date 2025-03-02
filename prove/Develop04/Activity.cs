@@ -32,8 +32,12 @@ abstract class Activity
     {
         for (int i = 0; i < seconds; i++)
         {
-            Console.Write(".");
+            Console.Write("\b \b");
+            Console.Write(i);
             Thread.Sleep(1000);
+            Console.Write("\b \b");
+            Console.Write(i+1);
+            
         }
         Console.WriteLine();
     }
