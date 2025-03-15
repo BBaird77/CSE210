@@ -4,9 +4,9 @@ using System.IO;
 
 abstract class Goal
 {
-    protected string Name;
-    protected int Points;
-    protected bool Completed;
+    public string Name { get; protected set; }
+    public int Points { get; protected set; }
+    public bool Completed { get; set; }
 
     public Goal(string name, int points)
     {
