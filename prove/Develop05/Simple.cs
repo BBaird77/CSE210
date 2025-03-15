@@ -1,6 +1,10 @@
-class SimpleGoal : Goal
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+class Simple : Goal
 {
-    public SimpleGoal(string name, int points) : base(name, points) { }
+    public Simple(string name, int points) : base(name, points) { }
 
     public override int RecordEvent()
     {
