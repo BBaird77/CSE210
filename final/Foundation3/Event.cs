@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+
+public class Event {
+    private string Title;
+    private string Description;
+    private string Date;
+    private string Time;
+    private Address _address;
+
+    public Event(string title, string description, string date, string time, Address address) {
+        Title = title;
+        Description = description;
+        Date = date;
+        Time = time;
+        _address = address;
+    }
+}
