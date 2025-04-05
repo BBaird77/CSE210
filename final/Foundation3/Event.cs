@@ -15,4 +15,8 @@ public class Event {
         Time = time;
         _address = address;
     }
+
+    public string GetStandardDetails() {
+        return $"Title: {Title}\nDescription: {Description}\nDate: {Date}\nTime: {Time}\nAddress: {_address.GetFullAddress}";
+    }
 }

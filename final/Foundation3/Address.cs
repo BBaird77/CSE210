@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class Address {
     private string Street;
@@ -12,5 +13,9 @@ public class Address {
         City = city;
         State = state;
         Country = country;
+    }
+
+    public string GetFullAddress() {
+        return $"{Street}, {City}, {State}, {Country}";
     }
 }
