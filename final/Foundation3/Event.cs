@@ -17,14 +17,14 @@ public class Event {
     }
 
     public string GetStandardDetails() {
-        return $"Title: {Title}\nDescription: {Description}\nDate: {Date}\nTime: {Time}\nAddress: {_address.GetFullAddress}";
+        return $"Title: {Title}\nDescription: {Description}\nDate: {Date}\nTime: {Time}\nAddress: {_address.GetFullAddress()}";
     }
 
      public virtual string GetFullDetails() {
         return GetStandardDetails();
     }
 
-     public string GetShortDescription() {
+     public virtual string GetShortDescription() {
         return $"Event Type: General\nTitle: {Title}\nDate: {Date}";
     }
 

@@ -3,16 +3,31 @@ using System.Collections.Generic;
 
 class Program {
     static void Main() {
-          Address address = new Address("123 Main St", "Springfield", "IL", "USA");
+         List<Event> events = Eventmaker.CreateEvents();
 
-        Event myEvent = new Event("Community Meetup", "A gathering of local residents.", "2025-04-10", "6:00 PM", address);
-        Console.WriteLine("Standard Event Details:");
-        Console.WriteLine(myEvent.GetFullDetails());
-        Console.WriteLine();
+        foreach (var ev in events)
+        {
+            if (ev is Lecture)
+            {
+                Console.WriteLine("Lecture Details:");
+                Console.WriteLine(ev.GetFullDetails());
+            }
+            else if (ev is Reception)
+            {
+                Console.WriteLine("Reception Details:");
+                Console.WriteLine(ev.GetFullDetails());
+                Console.WriteLine("Short Description:");
+                Console.WriteLine(ev.GetShortDescription());
+            }
+            else if (ev is Outdoor)
+            {
+                Console.WriteLine("Outdoor Event Details:");
+                Console.WriteLine(ev.GetFullDetails());
+                Console.WriteLine("Short Description:");
+                Console.WriteLine(ev.GetShortDescription());
+            }
 
-        Lecture lecture = new Lecture("Tech Talk", "Learn about AI in 2025", "2025-04-15", "2:00 PM", address, "Dr. Jane Smith", 100);
-        Console.WriteLine("Lecture Details:");
-        Console.WriteLine(lecture.GetFullDetails());
+            Console.WriteLine();
+        }
     }
-
 }
