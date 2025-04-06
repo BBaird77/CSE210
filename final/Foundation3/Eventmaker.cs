@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 
 public class Eventmaker {
-    public static List<Event> CreateEvents()
-    {
+    public static List<Event> CreateEvents() {
             Lecture lecture = new Lecture(
             "Tech Talk",
             "Learn about AI in 2025",

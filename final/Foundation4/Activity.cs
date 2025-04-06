@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-abstract class Activity {
+public abstract class Activity {
     private string Date;
     private int Minutes;
 
