@@ -9,4 +9,15 @@ abstract class Activity {
         this.Date = date;
         this.Minutes = minutes;
     }
+
+    public string GetDate() => Date;
+    public int GetMinutes() => Minutes;
+
+    public virtual double GetDistance() => 0;
+    public virtual double GetSpeed() => 0;
+    public virtual double GetPace() => 0;
+
+    public virtual string GetSummary() {
+        return "Summary.";
+    }
 }
